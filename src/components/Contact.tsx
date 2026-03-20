@@ -1,6 +1,9 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
 
+const EMAIL = "sommayadeepsaha@gmail.com";
+const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
+
 const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
@@ -10,8 +13,13 @@ const Contact = () => {
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href="mailto:sommayadeepsaha@gmail.com" data-cursor="disable">
-                sommayadeepsaha@gmail.com
+              <a
+                href={GMAIL_COMPOSE}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="disable"
+              >
+                {EMAIL}
               </a>
             </p>
             <h4>Phone</h4>
@@ -42,8 +50,9 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="mailto:sommayadeepsaha@gmail.com"
+              href={GMAIL_COMPOSE}
               target="_blank"
+              rel="noopener noreferrer"
               data-cursor="disable"
               className="contact-social"
             >

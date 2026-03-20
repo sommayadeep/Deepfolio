@@ -16,6 +16,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(
     window.innerWidth > 1024
   );
+  const [showCursor, setShowCursor] = useState<boolean>(
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  );
 
   useEffect(() => {
     let resizeTimeout: ReturnType<typeof window.setTimeout> | null = null;
@@ -23,6 +26,9 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     const syncLayout = () => {
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
+      setShowCursor(
+        window.matchMedia("(hover: hover) and (pointer: fine)").matches
+      );
     };
 
     const resizeHandler = () => {
@@ -48,7 +54,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
 
   return (
     <div className="container-main">
-      <Cursor />
+      {showCursor && <Cursor />}
       <Navbar />
       <SocialIcons />
       {isDesktopView && children}

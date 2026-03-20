@@ -8,6 +8,9 @@ import "./styles/Navbar.css";
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
 
+const EMAIL = "sommayadeepsaha@gmail.com";
+const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
+
 const Navbar = () => {
   useEffect(() => {
     if (window.innerWidth <= 1024) return;
@@ -59,11 +62,13 @@ const Navbar = () => {
         <a href="/#" className="navbar-title" data-cursor="disable">          SS
         </a>
         <a
-          href="mailto:sommayadeepsaha@gmail.com"
+          href={GMAIL_COMPOSE}
+          target="_blank"
+          rel="noopener noreferrer"
           className="navbar-connect"
           data-cursor="disable"
         >
-          sommayadeepsaha@gmail.com
+          {EMAIL}
         </a>
         <ul>
           <li>
