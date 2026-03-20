@@ -15,43 +15,58 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>B.Tech CSE (AI/ML)</h4>
+                <h5>SRM University AP</h5>
               </div>
-              <h3>2020</h3>
+              <h3>2024 — Present</h3>
             </div>
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Specializing in AI/ML with a CGPA of 8.7. Focused on DSA, OOP, DBMS,
+              Operating Systems, and applied machine learning. Building projects
+              that combine research-backed models with production-ready code.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>Developer</h4>
+                <h5>Trilingo • AlgoViz • Student Management System</h5>
               </div>
-              <h3>2021</h3>
+              <h3>2024</h3>
             </div>
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Shipped a voice-enabled translator (Trilingo), an interactive DSA
+              visualizer (AlgoViz), and a role-based student management system.
+              Focused on JavaScript, real-time UI, and secure CRUD flows with auth.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>Full-Stack Engineer</h4>
+                <h5>SugarShield • MahendraChandra & Sons</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>2025</h3>
             </div>
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Delivered production web experiences focused on performance and
+              reliability for health risk (SugarShield) and client-facing
+              operations (MahendraChandra & Sons) using React and Node.js.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>AI Engineer</h4>
+                <h5>Arthashastra-AI • CodeInsight-AI • Turbofan RUL</h5>
+              </div>
+              <h3>2026</h3>
+            </div>
+            <p>
+              Built AI copilots and predictive models spanning underwriting,
+              code review, and remaining useful life estimation. Combined Python,
+              LLMs, and web delivery to turn unstructured inputs into actionable
+              insights with clear signals and dashboards.
             </p>
           </div>
         </div>

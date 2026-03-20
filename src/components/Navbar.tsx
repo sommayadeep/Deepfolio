@@ -10,47 +10,60 @@ export let smoother: ScrollSmoother;
 
 const Navbar = () => {
   useEffect(() => {
-    smoother = ScrollSmoother.create({
+    if (window.innerWidth <= 1024) return;
+
+    const smootherInstance = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
-      smooth: 1.7,
-      speed: 1.7,
-      effects: true,
+      smooth: 0.9,
+      speed: 0.9,
+      effects: false,
       autoResize: true,
       ignoreMobileResize: true,
     });
 
-    smoother.scrollTop(0);
-    smoother.paused(true);
+    smoother = smootherInstance;
+    smootherInstance.scrollTop(0);
+    smootherInstance.paused(true);
 
-    let links = document.querySelectorAll(".header ul a");
+    const links = Array.from(document.querySelectorAll(".header ul a"));
+    const onLinkClick = (e: Event) => {
+      if (window.innerWidth > 1024) {
+        e.preventDefault();
+        const elem = e.currentTarget as HTMLAnchorElement;
+        const section = elem.getAttribute("data-href");
+        smootherInstance.scrollTo(section, true, "top top");
+      }
+    };
+
     links.forEach((elem) => {
-      let element = elem as HTMLAnchorElement;
-      element.addEventListener("click", (e) => {
-        if (window.innerWidth > 1024) {
-          e.preventDefault();
-          let elem = e.currentTarget as HTMLAnchorElement;
-          let section = elem.getAttribute("data-href");
-          smoother.scrollTo(section, true, "top top");
-        }
+      const element = elem as HTMLAnchorElement;
+      element.addEventListener("click", onLinkClick);
+    });
+
+    const onResize = () => ScrollSmoother.refresh(true);
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      links.forEach((elem) => {
+        const element = elem as HTMLAnchorElement;
+        element.removeEventListener("click", onLinkClick);
       });
-    });
-    window.addEventListener("resize", () => {
-      ScrollSmoother.refresh(true);
-    });
+      window.removeEventListener("resize", onResize);
+      smootherInstance.kill();
+    };
   }, []);
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          RC
+        <a href="/#" className="navbar-title" data-cursor="disable">          SS
         </a>
         <a
-          href="mailto:rajeshchittyal21@gmail.com"
+          href="mailto:sommayadeepsaha@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          rajeshchittyal21@gmail.com
+          sommayadeepsaha@gmail.com
         </a>
         <ul>
           <li>

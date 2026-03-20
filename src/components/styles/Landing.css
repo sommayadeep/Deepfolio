@@ -190,6 +190,8 @@
   line-height: 28px;
   font-weight: 500;
   font-family: "Geist", sans-serif;
+  white-space: nowrap;
+  word-break: keep-all;
 }
 
 /* .landing-intro h1 span {

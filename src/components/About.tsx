@@ -6,11 +6,12 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          Full Stack Developer with 4+ years of experience building scalable web
-          applications using React.js, Angular, Next.js, Node.js, and NestJS. Skilled
-          in microservices architecture, CMS development, and low-code platforms.
-          Passionate about creating high-performance, production-ready solutions
-          from concept to deployment.
+          B.Tech Computer Science (AI/ML) student at SRM University AP (CGPA 8.7)
+          focused on core CS fundamentals and applied machine learning. I build
+          data-driven and full-stack applications in C++, Python, and JavaScript,
+          with hands-on work in TensorFlow, React, and Node.js. I value clean code,
+          clear documentation, and shipping projects that translate research into
+          practical, scalable solutions.
         </p>
       </div>
     </div>
