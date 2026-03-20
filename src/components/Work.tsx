@@ -2,15 +2,19 @@ import { useState, useCallback, useEffect, useMemo } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
-import { projectImageMap } from "../data/projectImageMap.ts";
+import { projectImageMap, projectLinkMap } from "../data/projectImageMap.ts";
 
 interface GitHubRepo {
   name: string;
+  full_name: string;
   html_url: string;
   homepage: string | null;
   description: string | null;
   language: string | null;
   topics?: string[];
+  owner: {
+    login: string;
+  };
   pushed_at: string;
   created_at: string;
   fork: boolean;
@@ -27,7 +31,19 @@ interface PortfolioProject {
   updatedAt: string;
 }
 
-const GITHUB_USERNAME = import.meta.env.VITE_GITHUB_USERNAME || "sommayadeep";
+const rawGitHubUsernames =
+  import.meta.env.VITE_GITHUB_USERNAMES ||
+  import.meta.env.VITE_GITHUB_USERNAME ||
+  "sommayadeep,sommayadeepsaha";
+
+const GITHUB_USERNAMES = Array.from(
+  new Set(
+    rawGitHubUsernames
+      .split(",")
+      .map((name: string) => name.trim())
+      .filter(Boolean)
+  )
+);
 const GITHUB_PROJECT_LIMIT = 12;
 
 const readableDate = (date: string) =>
@@ -51,8 +67,10 @@ const getRepoTools = (repo: GitHubRepo) => {
 };
 
 const getRepoLink = (repo: GitHubRepo) => {
+  const overrideLink = projectLinkMap[repo.name];
+  if (overrideLink) return overrideLink;
   if (repo.homepage) return repo.homepage;
-  if (repo.has_pages) return `https://${GITHUB_USERNAME}.github.io/${repo.name}/`;
+  if (repo.has_pages) return `https://${repo.owner.login}.github.io/${repo.name}/`;
   return repo.html_url;
 };
 
@@ -77,14 +95,30 @@ const Work = () => {
     const fetchProjects = async () => {
       try {
         setIsLoading(true);
-        const response = await fetch(
-          `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&type=owner`,
-          { signal: controller.signal }
+        const responses = await Promise.all(
+          GITHUB_USERNAMES.map((username) =>
+            fetch(
+              `https://api.github.com/users/${username}/repos?sort=updated&per_page=100&type=owner`,
+              { signal: controller.signal }
+            )
+          )
         );
-        if (!response.ok) throw new Error("Unable to fetch GitHub repositories");
 
-        const data = (await response.json()) as GitHubRepo[];
-        const syncedProjects = data
+        const successfulResponses = responses.filter((response) => response.ok);
+        if (!successfulResponses.length) {
+          throw new Error("Unable to fetch GitHub repositories");
+        }
+
+        const results = await Promise.all(
+          successfulResponses.map((response) => response.json() as Promise<GitHubRepo[]>)
+        );
+
+        const allRepos = results.flat();
+        const uniqueRepos = Array.from(
+          new Map(allRepos.map((repo) => [repo.full_name, repo])).values()
+        );
+
+        const syncedProjects = uniqueRepos
           .filter((repo) => !repo.fork && !repo.archived)
           .sort(
             (a, b) =>
@@ -132,14 +166,14 @@ const Work = () => {
   );
 
   const goToPrev = useCallback(() => {
-    if (!projects.length) return;
+    if (projects.length <= 1) return;
     const newIndex =
       currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
     goToSlide(newIndex);
   }, [currentIndex, goToSlide, projects.length]);
 
   const goToNext = useCallback(() => {
-    if (!projects.length) return;
+    if (projects.length <= 1) return;
     const newIndex =
       currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
     goToSlide(newIndex);
@@ -159,6 +193,11 @@ const Work = () => {
               Could not load GitHub projects right now. Please try again later.
             </p>
           )}
+          {!isLoading && projects.length === 1 && (
+            <p className="work-status">
+              Only one project found. Add more repos on your GitHub account to enable sliding.
+            </p>
+          )}
 
           {/* Navigation Arrows */}
           <button
@@ -166,7 +205,7 @@ const Work = () => {
             onClick={goToPrev}
             aria-label="Previous project"
             data-cursor="disable"
-            disabled={!projects.length}
+            disabled={projects.length <= 1}
           >
             <MdArrowBack />
           </button>
@@ -175,7 +214,7 @@ const Work = () => {
             onClick={goToNext}
             aria-label="Next project"
             data-cursor="disable"
-            disabled={!projects.length}
+            disabled={projects.length <= 1}
           >
             <MdArrowForward />
           </button>
@@ -232,7 +271,7 @@ const Work = () => {
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"
-                disabled={!projects.length}
+                disabled={projects.length <= 1}
               />
             ))}
           </div>
