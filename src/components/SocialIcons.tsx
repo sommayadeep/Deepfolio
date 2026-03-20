@@ -4,7 +4,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
-import { TbNotes, TbWorld } from "react-icons/tb";
+import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
 
@@ -74,11 +74,6 @@ const SocialIcons = () => {
         <span>
           <a href="https://x.com/sommayadeep" target="_blank">
             <FaXTwitter />
-          </a>
-        </span>
-        <span>
-          <a href="https://sommayadeep.vercel.app" target="_blank">
-            <TbWorld />
           </a>
         </span>
       </div>
