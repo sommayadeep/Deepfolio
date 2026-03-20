@@ -129,7 +129,7 @@ const Work = () => {
 
         setProjects(syncedProjects);
         setCurrentIndex(0);
-      } catch (error) {
+      } catch {
         if (!controller.signal.aborted) {
           setProjects([]);
         }
@@ -153,31 +153,32 @@ const Work = () => {
       ),
     [projects]
   );
+  const projectCount = projects.length;
 
   const goToSlide = useCallback(
     (index: number) => {
-      if (!projects.length) return;
+      if (!projectCount) return;
       if (isAnimating) return;
       setIsAnimating(true);
       setCurrentIndex(index);
       setTimeout(() => setIsAnimating(false), 500);
     },
-    [isAnimating]
+    [isAnimating, projectCount]
   );
 
   const goToPrev = useCallback(() => {
-    if (projects.length <= 1) return;
+    if (projectCount <= 1) return;
     const newIndex =
-      currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
+      currentIndex === 0 ? projectCount - 1 : currentIndex - 1;
     goToSlide(newIndex);
-  }, [currentIndex, goToSlide, projects.length]);
+  }, [currentIndex, goToSlide, projectCount]);
 
   const goToNext = useCallback(() => {
-    if (projects.length <= 1) return;
+    if (projectCount <= 1) return;
     const newIndex =
-      currentIndex === projects.length - 1 ? 0 : currentIndex + 1;
+      currentIndex === projectCount - 1 ? 0 : currentIndex + 1;
     goToSlide(newIndex);
-  }, [currentIndex, goToSlide, projects.length]);
+  }, [currentIndex, goToSlide, projectCount]);
 
   return (
     <div className="work-section" id="work">
@@ -205,7 +206,7 @@ const Work = () => {
             onClick={goToPrev}
             aria-label="Previous project"
             data-cursor="disable"
-            disabled={projects.length <= 1}
+            disabled={projectCount <= 1}
           >
             <MdArrowBack />
           </button>
@@ -214,7 +215,7 @@ const Work = () => {
             onClick={goToNext}
             aria-label="Next project"
             data-cursor="disable"
-            disabled={projects.length <= 1}
+            disabled={projectCount <= 1}
           >
             <MdArrowForward />
           </button>
@@ -271,7 +272,7 @@ const Work = () => {
                 onClick={() => goToSlide(index)}
                 aria-label={`Go to project ${index + 1}`}
                 data-cursor="disable"
-                disabled={projects.length <= 1}
+                disabled={projectCount <= 1}
               />
             ))}
           </div>
