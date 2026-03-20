@@ -18,16 +18,33 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   );
 
   useEffect(() => {
-    const resizeHandler = () => {
+    let resizeTimeout: ReturnType<typeof window.setTimeout> | null = null;
+
+    const syncLayout = () => {
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
     };
-    resizeHandler();
-    window.addEventListener("resize", resizeHandler);
+
+    const resizeHandler = () => {
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
+
+      resizeTimeout = window.setTimeout(() => {
+        syncLayout();
+      }, 120);
+    };
+
+    syncLayout();
+    window.addEventListener("resize", resizeHandler, { passive: true });
+
     return () => {
       window.removeEventListener("resize", resizeHandler);
+      if (resizeTimeout) {
+        window.clearTimeout(resizeTimeout);
+      }
     };
-  }, [isDesktopView]);
+  }, []);
 
   return (
     <div className="container-main">

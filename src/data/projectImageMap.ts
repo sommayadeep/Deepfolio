@@ -16,5 +16,5 @@ export const projectImageMap: Record<string, string> = {
 // Map GitHub repo name -> preferred live URL.
 // This overrides homepage/github-pages/repo fallback in Work.tsx.
 export const projectLinkMap: Record<string, string> = {
-  Deepfolio: "https://deepfolio.vercel.app/",
+  Deepfolio: "https://deepsfolio.vercel.app",
 };
