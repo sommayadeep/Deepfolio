@@ -27,6 +27,12 @@
   width: 100%;
 }
 
+.work-status {
+  margin: 0 0 16px;
+  color: #adacac;
+  font-size: 15px;
+}
+
 .carousel-track-container {
   overflow: hidden;
   width: 100%;
@@ -107,6 +113,13 @@
   font-size: 15px;
 }
 
+.carousel-date {
+  margin: 4px 0 0;
+  font-size: 13px;
+  opacity: 0.7;
+  letter-spacing: 0.3px;
+}
+
 .carousel-image-wrapper {
   flex: 1;
   display: flex;
@@ -140,6 +153,11 @@
   border-color: var(--accentColor);
   color: var(--accentColor);
   box-shadow: 0 0 20px rgba(94, 234, 212, 0.15);
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 .carousel-arrow-left {
@@ -178,6 +196,48 @@
   background: var(--accentColor);
   border-color: var(--accentColor);
   box-shadow: 0 0 8px rgba(94, 234, 212, 0.4);
+}
+
+.carousel-dot:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.projects-timeline {
+  margin-top: 30px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.timeline-item {
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 6px 0;
+  color: #eae5ec;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.timeline-date {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  opacity: 0.65;
+  min-width: 72px;
+}
+
+.timeline-title {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.timeline-item:hover .timeline-title {
+  color: var(--accentColor);
 }
 
 /* ── Work Image (reused) ── */
@@ -323,6 +383,11 @@
 
   .carousel-slide {
     padding: 30px 0;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    gap: 3px;
   }
 
   .work-image img {

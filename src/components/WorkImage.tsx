@@ -29,6 +29,7 @@ const WorkImage = (props: Props) => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={() => setIsVideo(false)}
         target="_blank"
+        rel="noreferrer noopener"
         data-cursor={"disable"}
       >
         {props.link && (
