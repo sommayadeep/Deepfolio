@@ -1,6 +1,7 @@
 // Map GitHub repo name -> image path in /public.
 // Add entries here when you add a new project screenshot.
 export const projectImageMap: Record<string, string> = {
+  Deepfolio: "/portfolio.png",
   "Arthashastra-AI": "/arthashastra.png",
   "CodeInsight-AI": "/codeinsifht.png",
   "turbofan-rul-prediction": "/turbofan.png",
