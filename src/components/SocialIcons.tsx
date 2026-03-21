@@ -59,7 +59,7 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href="/models/cv.pdf"
+        href="/sommayadeep_saha.pdf"
         target="_blank"
         rel="noreferrer"
         data-cursor="disable"
