@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 interface Props {
@@ -8,9 +8,17 @@ interface Props {
   link?: string;
 }
 
+const FALLBACK_IMAGE = "/images/preview.png";
+
 const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);
   const [video, setVideo] = useState("");
+  const [imageSrc, setImageSrc] = useState(props.image);
+
+  useEffect(() => {
+    setImageSrc(props.image);
+  }, [props.image]);
+
   const handleMouseEnter = async () => {
     if (props.video) {
       setIsVideo(true);
@@ -37,7 +45,15 @@ const WorkImage = (props: Props) => {
             <MdArrowOutward />
           </div>
         )}
-        <img src={props.image} alt={props.alt} />
+        <img
+          src={imageSrc}
+          alt={props.alt}
+          onError={() => {
+            if (imageSrc !== FALLBACK_IMAGE) {
+              setImageSrc(FALLBACK_IMAGE);
+            }
+          }}
+        />
         {isVideo && <video src={video} autoPlay muted playsInline loop></video>}
       </a>
     </div>

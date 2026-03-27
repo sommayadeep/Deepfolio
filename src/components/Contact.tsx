@@ -3,6 +3,8 @@ import "./styles/Contact.css";
 
 const EMAIL = "sommayadeepsaha@gmail.com";
 const GMAIL_COMPOSE = `https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}`;
+const PHONE_DISPLAY = "+91 6909790275";
+const PHONE_LINK = "tel:+916909790275";
 
 const Contact = () => {
   return (
@@ -24,8 +26,8 @@ const Contact = () => {
             </p>
             <h4>Phone</h4>
             <p>
-              <a href="tel:+916909790275" data-cursor="disable">
-                +91 69097 90275
+              <a href={PHONE_LINK} data-cursor="disable">
+                {PHONE_DISPLAY}
               </a>
             </p>
             <h4>Education</h4>
@@ -59,7 +61,7 @@ const Contact = () => {
               Email <MdArrowOutward />
             </a>
             <a
-              href="tel:+916909690275"
+              href={PHONE_LINK}
               target="_blank"
               data-cursor="disable"
               className="contact-social"
