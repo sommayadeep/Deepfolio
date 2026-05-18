@@ -2,7 +2,7 @@
 
 Professional portfolio site built with React, TypeScript, GSAP and Three.js.
 
-![Hero Screenshot](public/images/preview.png)
+![Hero Screenshot](public/images/hero-screenshot.png)
 
 ## Table of contents
 
