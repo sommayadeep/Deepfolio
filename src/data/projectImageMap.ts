@@ -1,17 +1,17 @@
-// Map GitHub repo name -> image path in /public.
-// Add entries here when you add a new project screenshot.
+// Map GitHub repo name -> preview image path in /public.
+// Every current and future work card uses the uploaded Sommayadeep portrait.
 export const projectImageMap: Record<string, string> = {
-  Deepfolio: "/portfolio.png",
-  "Ember-PLATE": "/images/ember-plate.png",
-  "Arthashastra-AI": "/arthashastra.png",
-  "CodeInsight-AI": "/codeinsifht.png",
-  "turbofan-rul-prediction": "/turbofan.png",
-  "MahendraChandra-sons": "/mahendra.png",
-  SugarShield: "/sugershield.png",
-  Trilingo: "/Screenshot%202026-03-20%20at%203.51.30%E2%80%AFPM.png",
-  CertiTrust: "/certitrust.png",
-  "student-management-system": "/studentmanagementsystem.png",
-  "AlgoViz-DSA-Simulator": "/algoviz.png",
+  Deepfolio: "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "Ember-PLATE": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "Arthashastra-AI": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "CodeInsight-AI": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "turbofan-rul-prediction": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "MahendraChandra-sons": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  SugarShield: "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  Trilingo: "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  CertiTrust: "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "student-management-system": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
+  "AlgoViz-DSA-Simulator": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
 };
 
 // Map GitHub repo name -> preferred live URL.

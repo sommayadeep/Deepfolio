@@ -1,0 +1,77 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Sommayadeep Saha portfolio preview</title>
+  <desc id="desc">Dark portfolio screenshot with Sommayadeep Saha branding and teal-pink glow accents.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080B16" />
+      <stop offset="1" stop-color="#0A1020" />
+    </linearGradient>
+    <radialGradient id="glowLeft" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(360 620) rotate(28) scale(420 260)">
+      <stop stop-color="#41E8DA" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#41E8DA" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowRight" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1240 620) rotate(152) scale(420 260)">
+      <stop stop-color="#FF8BD6" stop-opacity="0.9" />
+      <stop offset="1" stop-color="#FF8BD6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="panel" x1="320" y1="220" x2="1280" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E1528" stop-opacity="0.95" />
+      <stop offset="1" stop-color="#10182D" stop-opacity="0.55" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#45F5E6" />
+      <stop offset="1" stop-color="#8FF8F0" />
+    </linearGradient>
+    <filter id="blur" x="0" y="0" width="1600" height="900" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="20" />
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <circle cx="360" cy="620" r="220" fill="url(#glowLeft)" filter="url(#blur)" />
+  <circle cx="1240" cy="620" r="220" fill="url(#glowRight)" filter="url(#blur)" />
+
+  <rect x="90" y="64" width="1420" height="760" rx="28" fill="url(#panel)" stroke="#1D2743" stroke-opacity="0.7" />
+
+  <g opacity="0.92" font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#EDEAF4">
+    <text x="132" y="132" font-size="30" font-weight="700" letter-spacing="1.2">SS</text>
+    <text x="780" y="132" font-size="28" font-weight="500" text-anchor="middle">sommayadeepsaha@gmail.com</text>
+    <text x="1248" y="132" font-size="24" font-weight="700" letter-spacing="1.5">ABOUT</text>
+    <text x="1378" y="132" font-size="24" font-weight="700" letter-spacing="1.5">WORK</text>
+    <text x="1490" y="132" font-size="24" font-weight="700" letter-spacing="1.5">CONTACT</text>
+  </g>
+
+  <g font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="146" y="584" font-size="30" font-weight="500" fill="#54F1E6">Hello! I&apos;m</text>
+    <text x="146" y="650" font-size="74" font-weight="800" fill="#F2ECF6" letter-spacing="1">SOMMAYADEEP</text>
+    <text x="146" y="720" font-size="74" font-weight="800" fill="#F2ECF6" letter-spacing="1">SAHA</text>
+
+    <text x="1114" y="584" font-size="30" font-weight="500" fill="#54F1E6">AI/ML</text>
+    <text x="1114" y="650" font-size="74" font-weight="800" fill="url(#accent)" letter-spacing="1">ENGINEER</text>
+    <text x="1114" y="720" font-size="74" font-weight="800" fill="#F2ECF6" letter-spacing="1">RESEARCHER</text>
+  </g>
+
+  <g transform="translate(0 18)">
+    <ellipse cx="800" cy="760" rx="210" ry="44" fill="#37E6D7" opacity="0.22" filter="url(#blur)" />
+    <circle cx="800" cy="378" r="152" fill="#D7B09B" />
+    <path d="M655 360C680 286 736 252 800 252C864 252 920 286 945 360V416H655V360Z" fill="#ECE7ED" />
+    <path d="M645 420H955V452C955 473 938 490 917 490H683C662 490 645 473 645 452V420Z" fill="#2A1E2F" />
+    <circle cx="704" cy="384" r="30" fill="#4E2F48" />
+    <circle cx="896" cy="384" r="30" fill="#4E2F48" />
+    <rect x="654" y="382" width="106" height="14" rx="7" fill="#05050B" transform="rotate(8 654 382)" />
+    <rect x="840" y="382" width="106" height="14" rx="7" fill="#05050B" transform="rotate(-8 840 382)" />
+    <path d="M730 442C744 463 767 476 796 476C825 476 849 463 864 442" stroke="#B47E71" stroke-width="12" stroke-linecap="round" />
+    <path d="M734 492C755 513 777 523 800 523C823 523 845 513 866 492" stroke="#2C0F0F" stroke-width="10" stroke-linecap="round" opacity="0.4" />
+    <path d="M666 520C692 579 735 616 800 616C865 616 908 579 934 520" fill="#C8856F" />
+    <path d="M520 762C542 648 614 590 707 584H893C986 590 1058 648 1080 762H520Z" fill="#2D2A31" />
+    <path d="M536 762C558 650 626 604 706 602H894C974 604 1042 650 1064 762" stroke="#4C4454" stroke-width="6" opacity="0.35" />
+    <circle cx="526" cy="372" r="40" fill="#D58F7E" />
+    <circle cx="1074" cy="372" r="40" fill="#D58F7E" />
+    <circle cx="526" cy="372" r="24" fill="none" stroke="#B96D61" stroke-width="8" />
+    <circle cx="1074" cy="372" r="24" fill="none" stroke="#B96D61" stroke-width="8" />
+    <ellipse cx="800" cy="474" rx="64" ry="34" fill="#8F5B4B" />
+    <circle cx="800" cy="474" r="24" fill="#2A1C24" opacity="0.25" />
+    <circle cx="800" cy="382" r="18" fill="#4A7DE9" opacity="0.9" />
+    <circle cx="800" cy="382" r="46" fill="#4A7DE9" opacity="0.16" filter="url(#blur)" />
+  </g>
+</svg>

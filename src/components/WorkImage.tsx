@@ -8,7 +8,7 @@ interface Props {
   link?: string;
 }
 
-const FALLBACK_IMAGE = "/images/preview.png";
+const FALLBACK_IMAGE = "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png";
 
 const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);

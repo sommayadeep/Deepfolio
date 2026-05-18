@@ -29,7 +29,7 @@ How it works:
 - Sorts by latest update date and shows a timeline automatically.
 - Uses `homepage` or GitHub Pages URL as project link (fallback: repo URL).
 
-![Portfolio-Preview](public/images/preview.png)
+![Portfolio-Preview](public/images/sommayadeep-preview.svg)
 
 ## License
 

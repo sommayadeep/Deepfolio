@@ -45,6 +45,7 @@ const GITHUB_USERNAMES = Array.from(
   )
 );
 const GITHUB_PROJECT_LIMIT = 12;
+const DEFAULT_PROJECT_IMAGE = "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png";
 
 const readableDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
@@ -78,7 +79,7 @@ const mapRepoToProject = (repo: GitHubRepo): PortfolioProject => ({
   title: repo.name,
   category: getRepoCategory(repo),
   tools: getRepoTools(repo),
-  image: projectImageMap[repo.name] || "/images/preview.png",
+  image: projectImageMap[repo.name] || DEFAULT_PROJECT_IMAGE,
   link: getRepoLink(repo),
   updatedAt: repo.pushed_at,
 });
