@@ -1,36 +1,92 @@
-# My Portfolio Wesbite - Overview 🚀
+# Deepfolio — Personal Portfolio
 
-This repository contains the open source version of my porfolio website.
-Do check it out!
+Professional portfolio site built with React, TypeScript, GSAP and Three.js.
 
-## Instructions 🛠️
+![Hero Screenshot](public/images/preview.png)
 
-I have modified the gsap club plugins with the trial plugins, but with the trial plugin you cannot host it🔴. So for Club plugins, Check out here: https://gsap.com/docs/v3/Installation/
+## Table of contents
 
-**Techstack** - React, TypeScript, GSAP, ThreeJS, WebGL, HTML, Css, JavaScript
+- [About](#about)
+- [Features](#features)
+- [Tech stack](#tech-stack)
+- [Local development](#local-development)
+- [Deployment](#deployment)
+- [Configuration](#configuration)
+- [Adding screenshots](#adding-screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Auto-sync Projects From GitHub
+## About
 
-The Work section is now synced from your GitHub repositories.
+Deepfolio is a modern, animated personal portfolio showcasing projects, an interactive 3D character scene, and smooth GSAP-driven UX. The Work section can auto-sync project entries from a GitHub account.
 
-1. Set your username in `.env`:
+## Features
+
+- Smooth, animated landing with a Three.js character scene
+- GSAP-powered scrolling and text animations
+- Auto-sync projects from GitHub
+- Responsive layout and fast development tooling (Vite)
+
+## Tech stack
+
+- **Framework:** React + TypeScript
+- **Animation / 3D:** GSAP, Three.js
+- **Build:** Vite
+- **Styling:** CSS modules / plain CSS
+
+## Local development
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Start the dev server:
+
+```bash
+npm run dev
+```
+
+Open http://localhost:5173 (or the URL shown by Vite).
+
+## Deployment
+
+Build for production:
+
+```bash
+npm run build
+npm run preview
+```
+
+Deploy the generated `dist/` folder to Netlify, Vercel, GitHub Pages, or any static hosting provider.
+
+## Configuration
+
+- To enable GitHub auto-sync for the Work section, set your username in a `.env` file:
 
 ```bash
 VITE_GITHUB_USERNAME=sommayadeep
 ```
 
-1. Add screenshot files inside `public/`.
-1. Map each repo name to its image in `src/data/projectImageMap.ts`.
+- Map project images in `src/data/projectImageMap.ts` to show screenshots for each repo.
 
-How it works:
+## Adding screenshots
 
-- Fetches public repos from `https://api.github.com/users/<username>/repos`.
-- Excludes forks and archived repos.
-- Sorts by latest update date and shows a timeline automatically.
-- Uses `homepage` or GitHub Pages URL as project link (fallback: repo URL).
+Place the hero screenshot or any preview images at `public/images/` and reference them in the README or the app. Recommended path for the landing hero image:
 
-![Portfolio-Preview](public/images/Screenshot 2026-05-18 at 5.43.16 PM.png)
+`public/images/hero-screenshot.png`
+
+If you have the screenshot attached separately, copy it into that location so the preview above renders on GitHub.
+
+## Contributing
+
+- Fixes, improvements and PRs are welcome. Please open an issue first for larger changes.
 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or collaboration: sommayadeepsa@gmail.com
