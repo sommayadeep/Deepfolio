@@ -57,13 +57,13 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <a
-        className="resume-button"
-        href="/sommayadeep-CV%20copy.pdf"
-        target="_blank"
-        rel="noreferrer"
-        data-cursor="disable"
-      >
+        <a
+          className="resume-button"
+          href="/models/sommayadeep-CV.  copy.pdf"
+          target="_blank"
+          rel="noreferrer"
+          data-cursor="disable"
+        >
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />

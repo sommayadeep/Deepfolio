@@ -1,5 +1,5 @@
 // Map GitHub repo name -> preview image path in /public.
-// Kept in src/data so Work.tsx can import it.
+// Every current and future work card uses the uploaded Sommayadeep portrait.
 export const projectImageMap: Record<string, string> = {
   Deepfolio: "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
   "Ember-PLATE": "/images/Screenshot%202026-05-18%20at%205.43.16%E2%80%AFPM.png",
@@ -19,4 +19,3 @@ export const projectImageMap: Record<string, string> = {
 export const projectLinkMap: Record<string, string> = {
   Deepfolio: "https://deepsfolio.vercel.app",
 };
-
