@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sommayadeep.vercel.app/sitemap.xml
